@@ -11,6 +11,10 @@
         <Chart :bardatas="datas"></Chart>
         <Lines :linedatas="linedata"></Lines>
       </div>
+      <div>
+        <span>翻页</span>
+        <Page :count="num"></Page>
+      </div>
     </div>
   </div>
 </template>
@@ -20,17 +24,21 @@
 import Bus from '../assets/bus'
 import Chart from '../components/common/chart_bar'
 import Lines from '../components/common/chart_line'
+import Page from '../components/common/page'
 
 export default {
   name: 'center',
   components: {
     Chart,
-    Lines
+    Lines,
+    Page
   },
   data () {
     return {
       isCollapse: false,
       uri: '',
+      search: '',
+      num: 100,
       datas: [
         {
           id: 'a',
@@ -38,11 +46,11 @@ export default {
           series: [
             {
               value: 45,
-              name: 'haha'
+              name: 'test1'
             },
             {
               value: 55,
-              name: 'hhhh'
+              name: 'test2'
             }
           ]
         }
